@@ -29,22 +29,52 @@ const Hero = () => {
     return () => clearInterval(interval)
   }, [])
 
+  // STATS VARIANT
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 80,
+      scale: 0.7,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+    },
+  }
+
   return (
-    <section className="w-full bg-[#362EED]/80 px-6 pt-55 pb-20 flex">
-      
+    <section className="w-full bg-[#362EED]/80 px-6 pt-55 pb-20 flex overflow-hidden">
+
       <div className="w-full max-w-7xl mx-auto">
 
         {/* HERO GRID */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="grid md:grid-cols-2 gap-16 items-center"
+        >
 
           {/* LEFT */}
-          <div className="text-center md:text-left">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+            }}
+            className="text-center md:text-left"
+          >
 
             {/* HELLO */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+              }}
               className="text-sky-400 font-medium mb-4"
             >
               Hello, I'm Fahmi
@@ -52,15 +82,20 @@ const Hero = () => {
 
             {/* DYNAMIC TITLE */}
             <motion.h1
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  className="text-5xl md:text-7xl font-bold leading-tight text-white h-[80px] md:h-[120px]"
-  style={{
-    WebkitTextStroke: '0.1px black',
-    textShadow: '4px 4px 0px rgba(0,0,0,2)',
-  }}
->
+              initial={{ opacity: 0, y: 80, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 0.3,
+                type: 'spring',
+                stiffness: 80,
+              }}
+              className="text-5xl md:text-7xl font-bold leading-tight text-white h-[80px] md:h-[120px]"
+              style={{
+                WebkitTextStroke: '0.1px black',
+                textShadow: '4px 4px 0px rgba(0,0,0,2)',
+              }}
+            >
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -77,9 +112,12 @@ const Hero = () => {
 
             {/* DESCRIPTION */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.6,
+              }}
               className="text-slate-300 mt-6 max-w-xl md:mx-0 mx-auto text-lg"
             >
               I build responsive, scalable, and modern web applications using
@@ -88,17 +126,41 @@ const Hero = () => {
 
             {/* SOCIAL ICONS */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.2,
+                    delayChildren: 0.8,
+                  },
+                },
+              }}
               className="mt-10 flex justify-center md:justify-start gap-8"
             >
 
               {/* LINKEDIN */}
-              <a
+              <motion.a
                 href="https://www.linkedin.com/in/mochamad-fahmi-fadillah/"
                 target="_blank"
                 rel="noopener noreferrer"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 50,
+                    scale: 0.5,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  },
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 120,
+                }}
                 className="
                   w-[70px] h-[70px]
                   bg-white
@@ -117,13 +179,29 @@ const Hero = () => {
                   alt="LinkedIn"
                   className="w-8 h-8 transition-all duration-500 hover:scale-125"
                 />
-              </a>
+              </motion.a>
 
               {/* GITHUB */}
-              <a
+              <motion.a
                 href="https://github.com/mochamadfahmifadillah/"
                 target="_blank"
                 rel="noopener noreferrer"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 50,
+                    scale: 0.5,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  },
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 120,
+                }}
                 className="
                   w-[70px] h-[70px]
                   bg-white
@@ -142,17 +220,20 @@ const Hero = () => {
                   alt="GitHub"
                   className="w-8 h-8 transition-all duration-500 hover:scale-125"
                 />
-              </a>
+              </motion.a>
 
             </motion.div>
 
-          </div>
+          </motion.div>
 
           {/* RIGHT IMAGE CARD */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: 120, rotate: 8 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={{
+              duration: 1.2,
+              ease: 'easeOut',
+            }}
             className="flex justify-center md:justify-end"
           >
             <div
@@ -198,117 +279,154 @@ const Hero = () => {
             </div>
           </motion.div>
 
-        </div>
+        </motion.div>
 
         {/* STATS SECTION */}
- <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="
-    mt-30
-    grid grid-cols-2 md:grid-cols-4
-    gap-6
-  "
->
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+          className="
+            mt-30
+            grid grid-cols-2 md:grid-cols-4
+            gap-6
+          "
+        >
 
-{/* CARD 1 */}
-<div
-  className="
-    bg-white
-    rounded-2xl
-    border-[3px]
-    border-[#000]
-    h-44
-    flex flex-col
-    justify-center
-    items-center
-    text-neutral-700
-    shadow-xl
-    transition-all
-    duration-500
-    hover:-translate-y-3
-    hover:shadow-2xl
-    hover:border-sky-500
-  "
->
-  <FaTools className="text-5xl mb-3 text-[#362EED]" />
-  <p className="mt-2 font-bold text-[#362EED]">Building Skills</p>
-</div>
+          {/* CARD 1 */}
+          <motion.div
+            variants={cardVariants}
+            transition={{
+              duration: 0.8,
+              type: 'spring',
+            }}
+            className="
+              bg-white
+              rounded-2xl
+              border-[3px]
+              border-[#000]
+              h-44
+              flex flex-col
+              justify-center
+              items-center
+              text-neutral-700
+              shadow-xl
+              transition-all
+              duration-500
+              hover:-translate-y-3
+              hover:shadow-2xl
+              hover:border-sky-500
+            "
+          >
+            <FaTools className="text-5xl mb-3 text-[#362EED]" />
+            <p className="mt-2 font-bold text-[#362EED]">
+              Building Skills
+            </p>
+          </motion.div>
 
-{/* CARD 2 */}
-<div
-  className="
-    bg-white
-    rounded-2xl
-    border-[3px]
-    border-[#000]
-    h-44
-    flex flex-col
-    justify-center
-    items-center
-    text-neutral-700
-    shadow-xl
-    transition-all
-    duration-500
-    hover:-translate-y-3
-    hover:shadow-2xl
-    hover:border-sky-500
-  "
->
-<FaBookOpen className="text-5xl mb-3 text-[#362EED]" />
-<p className="mt-2 font-bold text-[#362EED]">Learning Everyday</p>
-</div>
+          {/* CARD 2 */}
+          <motion.div
+            variants={cardVariants}
+            transition={{
+              duration: 0.8,
+              type: 'spring',
+            }}
+            className="
+              bg-white
+              rounded-2xl
+              border-[3px]
+              border-[#000]
+              h-44
+              flex flex-col
+              justify-center
+              items-center
+              text-neutral-700
+              shadow-xl
+              transition-all
+              duration-500
+              hover:-translate-y-3
+              hover:shadow-2xl
+              hover:border-sky-500
+            "
+          >
+            <FaBookOpen className="text-5xl mb-3 text-[#362EED]" />
+            <p className="mt-2 font-bold text-[#362EED]">
+              Learning Everyday
+            </p>
+          </motion.div>
 
-{/* CARD 3 */}
-<div
-  className="
-    bg-white
-    rounded-2xl
-    border-[3px]
-    border-[#000]
-    h-44
-    flex flex-col
-    justify-center
-    items-center
-    text-neutral-700
-    shadow-xl
-    transition-all
-    duration-500
-    hover:-translate-y-3
-    hover:shadow-2xl
-    hover:border-sky-500
-  "
->
-  <FaCode className="text-5xl mb-3 text-[#362EED]" />
-  <p className="mt-2 font-bold text-[#362EED]">Development</p>
-</div>
+          {/* CARD 3 */}
+          <motion.div
+            variants={cardVariants}
+            transition={{
+              duration: 0.8,
+              type: 'spring',
+            }}
+            className="
+              bg-white
+              rounded-2xl
+              border-[3px]
+              border-[#000]
+              h-44
+              flex flex-col
+              justify-center
+              items-center
+              text-neutral-700
+              shadow-xl
+              transition-all
+              duration-500
+              hover:-translate-y-3
+              hover:shadow-2xl
+              hover:border-sky-500
+            "
+          >
+            <FaCode className="text-5xl mb-3 text-[#362EED]" />
+            <p className="mt-2 font-bold text-[#362EED]">
+              Development
+            </p>
+          </motion.div>
 
-{/* CARD 4 */}
-<div
-  className="
-    bg-white
-    rounded-2xl
-    border-[3px]
-    border-[#000]
-    h-44
-    flex flex-col
-    justify-center
-    items-center
-    text-neutral-700
-    shadow-xl
-    transition-all
-    duration-500
-    hover:-translate-y-3
-    hover:shadow-2xl
-    hover:border-sky-500
-  "
->
-  <FaSeedling className="text-5xl mb-3 text-[#362EED]" />
-  <p className="mt-2 font-bold text-[#362EED]">Growing Consistently</p>
-</div>
+          {/* CARD 4 */}
+          <motion.div
+            variants={cardVariants}
+            transition={{
+              duration: 0.8,
+              type: 'spring',
+            }}
+            className="
+              bg-white
+              rounded-2xl
+              border-[3px]
+              border-[#000]
+              h-44
+              flex flex-col
+              justify-center
+              items-center
+              text-neutral-700
+              shadow-xl
+              transition-all
+              duration-500
+              hover:-translate-y-3
+              hover:shadow-2xl
+              hover:border-sky-500
+            "
+          >
+            <FaSeedling className="text-5xl mb-3 text-[#362EED]" />
+            <p className="mt-2 font-bold text-[#362EED]">
+              Growing Consistently
+            </p>
+          </motion.div>
 
-</motion.div>
+        </motion.div>
+
       </div>
     </section>
   )
