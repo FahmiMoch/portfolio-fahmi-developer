@@ -32,7 +32,7 @@ const certificates = [
     title: 'Lulus Program Dicoding Asah X Accenture',
     issuer: 'Dicoding Indonesia',
     image: '/dicoding-Asah.webp',
-    link: 'https://drive.google.com/file/d/1DD6t3mHREH8VETFNhsa7IlsDd7RJNZD1/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1fiJ8Fl_nHzo4IwzRAVzSm43hk1ZlrGtf/view?usp=sharing',
   },
 ]
 
