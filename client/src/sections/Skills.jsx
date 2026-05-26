@@ -1,23 +1,23 @@
 import jsLogo from '../assets/javascript.svg'
+import tailwindLogo from '../assets/tailwind.svg'
+import sassLogo from '../assets/sass.svg'
 import reactLogo from '../assets/react.svg'
 import reduxLogo from '../assets/redux.svg'
 import nodeLogo from '../assets/nodejs.svg'
 import expressLogo from '../assets/express-js.svg'
 import mongoLogo from '../assets/mongo.svg'
-import gitLogo from '../assets/git.svg'
-import githubLogo from '../assets/github.svg'
-import postmanLogo from '../assets/postman.svg'
+import postgreLogo from '../assets/postgresql.svg'
 
 const skills = [
   { name: 'JavaScript', image: jsLogo },
+  { name: 'Tailwind', image: tailwindLogo },
+  { name: 'Sass', image: sassLogo },
   { name: 'React', image: reactLogo },
   { name: 'Redux', image: reduxLogo },
   { name: 'Node.js', image: nodeLogo },
   { name: 'Express', image: expressLogo },
   { name: 'MongoDB', image: mongoLogo },
-  { name: 'Git', image: gitLogo },
-  { name: 'GitHub', image: githubLogo },
-  { name: 'Postman', image: postmanLogo },
+  { name: 'PostgreSQL', image: postgreLogo },
 ]
 
 const Skills = () => {
