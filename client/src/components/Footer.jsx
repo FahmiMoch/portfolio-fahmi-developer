@@ -16,7 +16,7 @@ const Footer = () => {
         {/* SECTION 1 */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">
-            Fahmi Portfolio
+            Personal Portfolio
           </h2>
 
           <p className="text-slate-400 leading-relaxed">

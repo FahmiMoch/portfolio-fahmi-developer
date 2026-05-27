@@ -28,11 +28,6 @@ const Contact = () => {
           <h2 className="text-5xl font-bold text-white mb-5 leading-tight">
             Let’s Work Together
           </h2>
-
-          <p className="text-slate-300 max-w-2xl mx-auto text-lg">
-            Feel free to reach out for collaboration, freelance work,
-            or just to say hello.
-          </p>
         </div>
 
         {/* Form Container */}
