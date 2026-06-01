@@ -43,10 +43,6 @@ const Certificates = () => {
 
         {/* HEADER */}
         <div className="text-center mb-24">
-          <p className="text-sky-300 font-medium mb-4 tracking-wide">
-            Certificates
-          </p>
-
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             My Certifications
           </h2>

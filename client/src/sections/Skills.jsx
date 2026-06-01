@@ -68,10 +68,6 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-16">
-          <p className="text-sky-300 font-medium mb-4">
-            Tech Stack
-          </p>
-
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Technologies I Work With
           </h2>
