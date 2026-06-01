@@ -75,9 +75,9 @@ const Hero = () => {
                 duration: 0.8,
                 delay: 0.2,
               }}
-              className="text-sky-400 font-medium mb-4"
+              className="text-white-500 font-medium mb-4"
             >
-              Hello, I'm Fahmi
+              Hello, I'm Mochamad Fahmi Fadillah
             </motion.p>
 
             {/* DYNAMIC TITLE */}
