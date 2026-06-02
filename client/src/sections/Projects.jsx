@@ -40,10 +40,6 @@ const Projects = () => {
           "
         >
 
-          <p className="text-sky-300 font-medium mb-4 tracking-wide">
-            Portfolio
-          </p>
-
           <h2
             className="
               text-4xl md:text-5xl

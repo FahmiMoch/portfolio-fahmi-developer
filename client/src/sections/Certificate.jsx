@@ -46,11 +46,6 @@ const Certificates = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             My Certifications
           </h2>
-
-          <p className="text-white mt-5 max-w-2xl leading-relaxed">
-            Some professional certifications and learning achievements
-            that represent my development journey in web technologies.
-          </p>
         </div>
 
         {/* GRID */}

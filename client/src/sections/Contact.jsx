@@ -21,10 +21,6 @@ const Contact = () => {
 
         {/* Title */}
         <div className="text-center mb-16">
-          <p className="text-sky-400 font-medium mb-4 tracking-widest uppercase">
-            Contact
-          </p>
-
           <h2 className="text-5xl font-bold text-white mb-5 leading-tight">
             Let’s Work Together
           </h2>
