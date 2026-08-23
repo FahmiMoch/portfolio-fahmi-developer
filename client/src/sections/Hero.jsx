@@ -142,7 +142,7 @@ const Hero = () => {
 
               {/* LINKEDIN */}
               <motion.a
-                href="https://www.linkedin.com/in/mochamad-fahmi-fadillah/"
+                href="https://id.linkedin.com/in/mochamad-fahmi-fadillah"
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={{
